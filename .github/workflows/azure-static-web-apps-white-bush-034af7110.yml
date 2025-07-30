@@ -16,7 +16,7 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: 074fc192a0c919a71ee74387d4ded93ddcc75a255bab3de9751409c51ee655cc02-1ed2dc97-a260-4e81-a8e2-1182a419c7090101230034af7110
+          azure_static_web_apps_api_token: 63d1f21b0ea2a8acb718091163c809e16eb8e404bddab09fb30c2c68e0d1581e02-3cb0397a-d9ce-4d57-9382-1e85ade637270101230034af7110
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "/"           # no frontend
