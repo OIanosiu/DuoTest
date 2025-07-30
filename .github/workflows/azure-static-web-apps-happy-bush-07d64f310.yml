@@ -27,14 +27,12 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_HAPPY_BUSH_07D64F310 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-
-          ###### Config for API-only deployment ######
-          app_location: ""                # No frontend
-          api_location: "api"             # Where your checkDuoEnrolled.js is
-          output_location: ""             
-          skip_app_build: true            
-          ###### End config ######
-
+          app_location: "."            # Required dummy value since no frontend
+          api_location: "api"          # Folder with your Azure Functions
+          output_location: ""          # No frontend output
+          skip_app_build: true         # Skip frontend build
+          skip_api_build: true         # Skip API build (use if your API is ready to deploy)
+          
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
